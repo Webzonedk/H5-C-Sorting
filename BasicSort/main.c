@@ -108,7 +108,7 @@ void insertionSort(int array[], int n)
     // printf("\n\n");
 }
 
-void insertionsortPointer(int *array, int n)
+void insertionSortPointer(int *array, int n)
 {
     int i, key, j;
     for (i = 1; i < n; i++) // start at 1, because the first element is already sorted
@@ -227,7 +227,7 @@ void mergeSort(int array[], int left, int right) {
 
 
 
-
+// Main need to be in button as other methods should be initialized before main
 int main()
 {
     // initialize the random number generator
@@ -248,16 +248,11 @@ int main()
     //     printf("%d ", array[i]);
     // }
     // printf("Random array with ", size, "numbers created\n\n");
-    //-------------------------------
 
+    //-----------------------------------------
     n = sizeof(array) / sizeof(array[0]);
-
-    // Start timer
     start_time = clock();
-
     selectionSort(array, n);
-
-    // Stop timer
     end_time = clock();
     elapsed_time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
     printf("Time used for selectionSort: %f seconds\n", elapsed_time);
@@ -283,7 +278,7 @@ int main()
     generateRandomNumbers(array, size, lower, upper);
     n = sizeof(array) / sizeof(array[0]);
     start_time = clock();
-    insertionsortPointer(array, n);
+    insertionSortPointer(array, n);
     end_time = clock();
     elapsed_time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
     printf("Time used for insertionsortPointer: %f seconds\n\n", elapsed_time);
